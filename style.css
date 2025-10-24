@@ -1,90 +1,156 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 100;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
 }
 
 body,
 html {
-    height: 100%;
-    width: 100%;
-    background-color: rgb(185, 185, 185);
+  height: 100%;
+  width: 100%;
+  background-color: rgb(185, 185, 185);
 }
 
-nav, #footer  {
-    height: 10vh;
-    width: 100vw;
-    /* background: #6d6d6d; */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5%;
-
+nav {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  padding: 0 5%;
+}
+nav .navElem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+nav .navElem a {
+  color: black;
+  text-decoration: none;
+  text-align: start;
+  font-size: 0.8rem;
+}
+nav .navElem a:hover {
+  color: rgb(36, 36, 36);
+}
+nav .navElem.left {
+  justify-content: flex-start;
+}
+nav .navElem.center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  font-weight: 400px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.4rem;
+}
+nav .navElem.right {
+  justify-content: flex-end;
 }
 
-.navElem {
+main {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+}
+main h1 {
+  text-align: center;
+  font-size: 5rem;
+}
+main img {
+  width: 100%;
+  border-radius: 15px;
+  margin: 0.5rem 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main .content {
+  text-align: left;
+  margin-top: 1rem;
+  padding: 0 0.5rem;
+}
+main .content h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+main .content p {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.4;
+}
+main .content div {
+  margin-bottom: 1rem;
+}
+
+footer {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer .btn {
+  background-color: transparent;
+  border: none;
+}
+footer .btn a {
+  color: black;
+}
+footer .btn:hover {
+  cursor: pointer;
+}
+footer #btn1 a {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-decoration: none;
+}
+
+/* --- Desktop --- */
+@media (min-width: 1200px) {
+  nav .navElem {
     width: 20vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    /* background-color: aqua; */
-}
-
-.navElem h1 {
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 400;
-    font-size: 3vw;
-}
-
-.navElem a {
-    font-size: 1.1vw;
+    flex-direction: row;
+  }
+  nav .navElem a {
+    margin: 0 5%;
+    font-size: 1.2rem;
     font-weight: bold;
-    color: black;
-    text-decoration: none;
-}
-
-#heroSection {
+  }
+  main {
     height: 80vh;
-    width: 100vw;
-    /* background: #71bd81; */
-}
-
-#heroSection h1 {
-    text-align: center;
-    width: 100vw;
-    /* background: #a7a6a6; */
+    padding: 0%;
+    background-color: beige;
+  }
+  main h1 {
+    width: 100%;
     font-size: 23vw;
     letter-spacing: 5px;
-}
-
-#img1 {
-    height: 38%;
+  }
+  main #img1 {
+    width: 15%;
     position: absolute;
     right: 17%;
-    top: 42%;
+    top: 43%;
     z-index: 10;
-}
-
-#img2 {
+  }
+  main #img2 {
     width: 15%;
     position: absolute;
     right: 25%;
-    top: 75%;
+    top: 79%;
     z-index: 9;
-}
-
-#img3 {
-    height: 30%;
+  }
+  main #img3 {
+    width: 12%;
     position: absolute;
     right: 37%;
-    top: 52%;
+    top: 53%;
     z-index: 8;
-}
-
-.content {
-    /* background: #eeb0b0; */
+  }
+  main .content {
     height: 21vh;
     width: 13vw;
     position: absolute;
@@ -94,32 +160,5 @@ nav, #footer  {
     flex-direction: column;
     justify-content: space-between;
     line-height: 25px;
-}
-
-.content h2 {
-    font-size: 1.2vw;
-    font-weight: bold;
-}
-
-.content p {
-    font-size: 0.9vw;
-}
-
-.btn {
-    width: 15vw;
-    height: 7vh;
-    font-size: 1.5vw;
-    background-color: transparent;
-    border: none;
-}
-
-#btn1 a {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-decoration: none;
-    color: #000;
-    
-}
-
-#btn2 a {
-    color: #000;
-}
+  }
+}/*# sourceMappingURL=Style.css.map */
