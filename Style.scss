@@ -1,3 +1,4 @@
+/* -------------------- RESET -------------------- */
 * {
   padding: 0;
   margin: 0;
@@ -6,15 +7,16 @@
   font-weight: 100;
 }
 
-body,
-html {
+html,
+body {
   height: 100%;
   width: 100%;
   background-color: gainsboro;
 }
 
+/* -------------------- NAVBAR -------------------- */
 nav {
-  height: 10vh;
+  height: 13vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -33,12 +35,11 @@ nav {
       font-size: 0.8rem;
       padding: 10px 15px;
       border-radius: 20px;
+      transition: background-color 0.3s ease;
     }
 
     a:hover {
       background-color: rgb(200, 200, 200);
-      // scale: 1.05;
-      // text-decoration: underline;
     }
   }
 
@@ -50,7 +51,7 @@ nav {
     flex-grow: 1;
     display: flex;
     justify-content: center;
-    font-weight: 400px;
+    font-weight: 400;
     font-family: "Times New Roman", Times, serif;
     font-size: 1.4rem;
   }
@@ -60,6 +61,7 @@ nav {
   }
 }
 
+/* -------------------- MAIN -------------------- */
 main {
   width: 100%;
   padding: 1rem;
@@ -75,6 +77,7 @@ main {
     margin: 0.5rem 0;
     object-fit: cover;
   }
+
   .content {
     text-align: left;
     margin-top: 1rem;
@@ -98,7 +101,9 @@ main {
   }
 }
 
+/* -------------------- FOOTER -------------------- */
 footer {
+  height: 7vh;
   width: 100%;
   padding: 0.5rem 1rem;
   display: flex;
@@ -110,9 +115,11 @@ footer {
     border: none;
     padding: 10px 15px;
     border-radius: 20px;
+    transition: background-color 0.3s ease;
 
     a {
       color: black;
+      text-decoration: none;
     }
 
     &:hover {
@@ -123,17 +130,18 @@ footer {
 
   #btn1 a {
     font-family: Georgia, "Times New Roman", Times, serif;
-    text-decoration: none;
   }
 }
 
-/* --- Tab --- */
+/* -------------------- TABLET -------------------- */
 @media (min-width: 768px) {
   nav {
+    height: 10vh;
     position: relative;
 
     .navElem {
       flex-direction: row;
+      gap: 2vw;
 
       a {
         font-size: 2.1vw;
@@ -157,16 +165,18 @@ footer {
 
     #img1 {
       right: 3vw;
+      // top: 0;
     }
 
     #img2 {
+      width: 32vw;
       top: 40vh;
-      right: 35vw;
+      right: 34vw;
     }
 
     #img3 {
       left: 3vw;
-      bottom: 0vh;
+      bottom: 0;
     }
 
     .content {
@@ -187,17 +197,17 @@ footer {
   }
 }
 
-/* --- Desktop --- */
+/* -------------------- DESKTOP / LAPTOP -------------------- */
 @media (min-width: 1024px) {
   nav {
     position: relative;
 
     .navElem {
-      width: 20vw;
       flex-direction: row;
+      gap: 2vw;
+      width: auto;
 
       a {
-        margin: 0 5%;
         font-size: 1rem;
         font-weight: bold;
       }
@@ -205,37 +215,46 @@ footer {
   }
 
   main {
+    position: relative;
     height: 80vh;
+    // background-color: bisque;
+
+    h1 {
+      font-size: 22vw;
+      letter-spacing: 5px;
+    }
 
     img {
       position: absolute;
-      width: 25vw;
+      object-fit: cover;
     }
 
+    /* Use clamp() for fluid scaling */
     #img1 {
       right: 5vw;
-      top: 30vh;
+      top: 20vh;
       z-index: 8;
-      max-width: 300px;
+      width: clamp(300px, 14vw, 400px);
     }
 
     #img2 {
       right: 25vw;
+      top: 55vh;
       z-index: 9;
-      max-width: 280px;
+      width: clamp(280px, 13vw, 380px);
     }
 
     #img3 {
-      bottom: 5vh;
-      right: 42vw;
+      top: 25vh;
+      left: 30vw;
       z-index: 8;
-      max-width: 260px;
+      width: clamp(270px, 12vw, 360px);
     }
 
     .content {
       position: absolute;
       left: 5vw;
-      bottom: 20vh;
+      top: 50vh;
       width: 25vw;
       display: flex;
       flex-direction: column;
@@ -249,7 +268,47 @@ footer {
     padding: 0 5%;
 
     .btn a {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
+  }
+}
+
+/* -------------------- 4K / LARGE SCREENS -------------------- */
+@media (min-width: 1920px) {
+  main {
+    height: 80vh;
+
+    h1 {
+      font-size: 23vw;
+    }
+
+    #img1 {
+      right: 16vw;
+      top: 33vh;
+      width: clamp(300px, 12vw, 400px);
+      z-index: 10;
+    }
+
+    #img2 {
+      right: 25vw;
+      top: 70vh;
+      width: clamp(280px, 11vw, 380px);
+    }
+
+    #img3 {
+      left: 50vw;
+      top: 43vh;
+      width: clamp(260px, 10vw, 360px);
+    }
+
+    .content {
+      width: 20vw;
+      left: 10vw;
+      bottom: 18vh;
+    }
+  }
+
+  footer .btn a {
+    font-size: 1.5rem;
   }
 }
